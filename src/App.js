@@ -2,8 +2,8 @@
 import { React,useState } from 'react';
 import './assets/styles/App.css';
 import HeaderApp from './components/app/HeaderApp';
-import introPage from './components/pages/intro/IntroPage';
 import IntroPage from './components/pages/intro/IntroPage';
+import WeatherPage from './components/pages/weather/WeatherPage';
 // import bookmark from './assets/icons/bookmark.svg';
 // import bookmarkChecked from './assets/icons/bookmark-checked.svg'
 // import sunny from './assets/icons/icons-weather/sun.gif';
@@ -24,6 +24,7 @@ function App() {
       </header>
       <main>
         <IntroPage/>
+        <WeatherPage/>
       </main>
       <footer></footer>
     </div>

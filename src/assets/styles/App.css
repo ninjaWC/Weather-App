@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 a{
   color: #333;
@@ -11,6 +12,16 @@ a{
 .container{
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.weather__headline {
+  font-size: 64px;
+  font-weight: 500;
+  text-align: center;   
+}
+.headline {
+}
+.headline__title {
 }
 
 header{}
@@ -104,7 +115,7 @@ header{}
 
 .intro {
   position: relative;
-  height: 90vh;
+  height: 100vh;
 }
 .intro__inner {
   padding-top: 170px;
@@ -169,14 +180,111 @@ header{}
 }
 .intro__background-images:nth-child(6){
   background-image: url('../icons/icons-weather/wind.gif');
-  top: 75%;
+  top: 65%;
   left: 62%;
 }
 .intro__background-images:last-child {
   background-image: url('../icons/icons-weather/clouds.gif');
-  top: 70%;
+  top: 63%;
   left: 29%;
   transform: rotate(30deg);
 }
 
 /* INTRO END */
+
+/* WEATHER START */
+
+.weather{
+  background: linear-gradient(136deg, #E1E1E1 0%, rgba(225, 225, 225, 0.00) 100%);
+}
+
+.weather__headline {
+}
+.headline {
+  padding: 100px 0px 50px;
+}
+.headline__title {
+}
+
+
+.weather__main {
+  /* max-width: 800px; */
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather__location {
+  display: flex;
+  gap: 20px;
+}
+
+.weather__location input, 
+.weather__location button{
+  border: 1px solid #33CCCC;
+  border-radius: 10px;
+  font-size: 20px;
+  height: 40px;
+}
+.weather__location input{
+  width: 200px;
+  padding: 10px;
+}
+
+.weather__location button{
+  width: 150px;
+  background-color: transparent;
+
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.weather__location button:hover{
+  background-color: #33CCCC;
+  color: #fff;
+}
+
+.weather__choose {
+  font-size: 1.7rem;
+  padding: 40px 0px 20px;
+}
+.weather__forecast {
+  width: 50%;
+}
+.weather__forecast-top{
+
+}
+.weather__forecast-main{
+  width: 100%;
+  min-height: 200px;
+  background-color: #fff;
+  border:1px solid #333;
+  border-radius: 20px;
+}
+.weather__city {
+}
+.weather__city-icon {
+}
+.weather__city-decription {
+}
+.weather__city-name {
+}
+.weather__additional {
+}
+.weather__feels {
+}
+.weather__sea-level {
+}
+.weather__wind-speed {
+}
+.weather__temperature {
+}
+.weather__day {
+}
+.weather__night {
+}
+
+/* WEATHER END */
+
