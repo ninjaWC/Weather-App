@@ -228,6 +228,7 @@ header{}
   font-size: 20px;
   height: 40px;
 }
+
 .weather__location input{
   width: 200px;
   padding: 10px;
@@ -251,7 +252,7 @@ header{}
   padding: 40px 0px 20px;
 }
 .weather__forecast {
-  width: 50%;
+  width: 60%;
 }
 .weather__forecast-top{
 
@@ -259,19 +260,40 @@ header{}
 .weather__forecast-main{
   width: 100%;
   min-height: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 40px;
+
   background-color: #fff;
   border:1px solid #333;
   border-radius: 20px;
+  overflow: hidden;
+
+  font-size: 32px;
 }
 .weather__city {
 }
 .weather__city-icon {
+  background-image: url('../icons/icons-weather/clouds.gif');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 150px;
+  height: 150px;
 }
 .weather__city-decription {
 }
 .weather__city-name {
 }
 .weather__additional {
+  padding: 0px 30px;
+  border-right:2px solid #070707 ;
+  border-left: 2px solid #070707;
+}
+.weather__additional div{
+  border-bottom: 1px solid #070707;
 }
 .weather__feels {
 }
@@ -279,7 +301,8 @@ header{}
 }
 .weather__wind-speed {
 }
-.weather__temperature {
+.weather__temperature, .weather__city-name {
+  font-size: 56px;
 }
 .weather__day {
 }
