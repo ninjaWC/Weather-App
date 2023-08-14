@@ -6,7 +6,7 @@
   color: #333;
 }
 a{
-  color: #333;
+  color: #fff;
   text-decoration: none;
 }
 .container{
@@ -81,11 +81,19 @@ header{}
   transition: .3s;
 }
 
+.hide{
+  display: none;
+}
 .header__dropdown{
   position: absolute;
+  top: 30px;
   list-style: none;
+  background-color: #333;
+  transition: all .3s ;
 }
-
+.header__dropdown a{
+  padding: 10px;
+}
 .header__links:hover {
   color: #fff;
   box-shadow: inset 200px 0 0 0 #333;
