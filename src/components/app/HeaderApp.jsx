@@ -3,17 +3,24 @@ import React from "react";
 
 const HeaderApp = ()=>{
 
-    
+    let location = localStorage.getItem('city');
     function dropDown(){
         document.querySelector('.header__dropdown').classList.toggle('hide');
+        document.querySelectorAll('.header__links')[1].classList.toggle('header__links-active');
     }
-    console.log(document.querySelectorAll('.header__links')[1]);
+    // console.log(document.querySelectorAll('.header__links')[1]);
     return(
         <div className="container">
+
             <div className="header__top">
 
                 <div className="header__user-location">
-                    Your location: <span>Almaty</span>
+                    Your location: 
+                    {
+                        !location 
+                        ? <span>Not found</span>
+                        : <span> {location} </span> 
+                    }
                 </div>
 
                 <div className="header__author">
@@ -42,7 +49,11 @@ const HeaderApp = ()=>{
                     <button className="header__button">Sign in</button>
 
                 </div>
-
+                <div className="header__burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
 
         </div>
