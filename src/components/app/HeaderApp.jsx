@@ -4,6 +4,7 @@ import React from "react";
 const HeaderApp = ()=>{
 
     let location = localStorage.getItem('city');
+    console.log(location);
     function dropDown(){
         document.querySelector('.header__dropdown').classList.toggle('hide');
         document.querySelectorAll('.header__links')[1].classList.toggle('header__links-active');
@@ -18,7 +19,7 @@ const HeaderApp = ()=>{
                     Your location: 
                     {
                         !location 
-                        ? <span>Not found</span>
+                        ? <span> not found</span>
                         : <span> {location} </span> 
                     }
                 </div>
