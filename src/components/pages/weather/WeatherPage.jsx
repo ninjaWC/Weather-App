@@ -21,7 +21,7 @@ const WeatherPage = ()=>{
         localStorage.setItem('city', city);
         
         let cityName = localStorage.getItem('city')
-        const response = await axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=ed096897ea395bffcecec59f006b14dc`)
+        const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=ed096897ea395bffcecec59f006b14dc`)
           .catch(reject => alert(reject));
         setCity('');
         
