@@ -4,10 +4,14 @@ import React from "react";
 const HeaderApp = ()=>{
 
     let location = localStorage.getItem('city');
-    console.log(location);
     function dropDown(){
         document.querySelector('.header__dropdown').classList.toggle('hide');
         document.querySelectorAll('.header__links')[1].classList.toggle('header__links-active');
+    }
+
+    function openBurger(){
+        document.querySelector('.header__burger').classList.toggle('open');
+        document.querySelector('.header__nav').classList.toggle('header__nav--show');
     }
     // console.log(document.querySelectorAll('.header__links')[1]);
     return(
@@ -42,7 +46,7 @@ const HeaderApp = ()=>{
                     >
                         Other Apps <span></span>
                         <div className="header__dropdown hide">
-                            <li><a href="#">Todo App</a></li>
+                            <li><a href="https://ninjawc.github.io/alitodo/">Todo App</a></li>
                             <li><a href="#" id="soon">Soon...</a></li>
                         </div>
                     </div>
@@ -50,7 +54,10 @@ const HeaderApp = ()=>{
                     <button className="header__button">Sign in</button>
 
                 </div>
-                <div className="header__burger">
+                <div 
+                    className="header__burger"
+                    onClick={openBurger}
+                    >
                     <span></span>
                     <span></span>
                     <span></span>

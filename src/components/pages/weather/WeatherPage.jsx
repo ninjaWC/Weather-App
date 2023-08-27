@@ -11,30 +11,37 @@ const WeatherPage = ()=>{
     const [city, setCity] = useState();
     const [weatherData, setWeatherData] = useState();
 
-    useEffect(()=>{
-      weatherAPI();
-    },[]);
+
 
     async function weatherAPI(event){
         event.preventDefault();
 
         localStorage.setItem('city', city);
-        
+
+        // cityArray.push(city)
+        // localStorage.setItem('cityArray', cityArray);
+
         let cityName = localStorage.getItem('city')
-        const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=ed096897ea395bffcecec59f006b14dc`)
-          .catch(reject => alert(reject));
         setCity('');
+
+        const response = await axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=ed096897ea395bffcecec59f006b14dc`)
+        .catch(reject => alert(reject));
         
         let cityLat = response.data[0].lat, 
-            cityLon = response.data[0].lon;
+        cityLon = response.data[0].lon;
+        
+        async function getWeatherData(){
+          const responseWeather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${cityLat.toFixed(2)}&lon=${cityLon.toFixed(2)}&appid=ed096897ea395bffcecec59f006b14dc `);
+          localStorage.setItem('weatherData', JSON.stringify(responseWeather.data))
+          setWeatherData( JSON.parse(localStorage.getItem('weatherData')));
+        }
+        getWeatherData();
+      }
 
-            async function getWeatherData(){
-              const responseWeather = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${cityLat.toFixed(2)}&lon=${cityLon.toFixed(2)}&appid=ed096897ea395bffcecec59f006b14dc `);
-              localStorage.setItem('weatherData', JSON.stringify(responseWeather.data))
-              setWeatherData( JSON.parse(localStorage.getItem('weatherData')));
-            }
-            getWeatherData();
-    }
+    useEffect(()=>{
+      weatherAPI();
+    },[]);
+
 
     return (
       <section className="weather">
@@ -59,6 +66,24 @@ const WeatherPage = ()=>{
               <button className="custom__btn btn">Submit</button>
             </form>
 
+
+            {/* { cityArray
+              ?<div className="weather__added-location">
+                {cityArray.map((cityName)=> 
+                    <div className="weather__added-list">
+                      <button
+                        onClick={deleteCity}
+                        className="weather__added-button"></button>
+                      <div className="weather__added-city">{cityName}</div>
+                  </div>
+                )}
+              </div>
+
+              : <div className=""></div>
+            
+            } */}
+            
+            
             <div className="weather__forecast">
               <div className="weather__forecast-top">
                 <div className="weather__choose">

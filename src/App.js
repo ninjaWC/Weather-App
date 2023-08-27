@@ -4,6 +4,7 @@ import './assets/styles/App.css';
 import HeaderApp from './components/app/HeaderApp';
 import IntroPage from './components/pages/intro/IntroPage';
 import WeatherPage from './components/pages/weather/WeatherPage';
+import FooterApp from './components/app/FooterApp';
 // import bookmark from './assets/icons/bookmark.svg';
 // import bookmarkChecked from './assets/icons/bookmark-checked.svg'
 // import sunny from './assets/icons/icons-weather/sun.gif';
@@ -26,7 +27,9 @@ function App() {
         <IntroPage/>
         <WeatherPage/>
       </main>
-      <footer></footer>
+      <footer>
+        <FooterApp/>
+      </footer>
     </div>
   );
 }
