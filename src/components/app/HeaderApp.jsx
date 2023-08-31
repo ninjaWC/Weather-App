@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 // import './IntroPage.module.css';
 
 const HeaderApp = ()=>{
+
+    let headerNav = useRef(null);
+    let headerBurger = useRef(null);
 
     let location = localStorage.getItem('city');
     function dropDown(){
@@ -10,10 +13,10 @@ const HeaderApp = ()=>{
     }
 
     function openBurger(){
-        document.querySelector('.header__burger').classList.toggle('open');
-        document.querySelector('.header__nav').classList.toggle('header__nav--show');
+        headerBurger.current.classList.toggle('open');
+        headerNav.current.classList.toggle('header__nav--show');
     }
-    // console.log(document.querySelectorAll('.header__links')[1]);
+    
     return(
         <div className="container">
 
@@ -37,7 +40,7 @@ const HeaderApp = ()=>{
 
                 <div className="header__logo">Ali-Weather</div>
 
-                <div className="header__nav">
+                <div ref={headerNav} className="header__nav">
                     <a href="#" className="header__links">About Me</a >
 
                     <div 
@@ -57,6 +60,7 @@ const HeaderApp = ()=>{
                 <div 
                     className="header__burger"
                     onClick={openBurger}
+                    ref={headerBurger}
                     >
                     <span></span>
                     <span></span>
